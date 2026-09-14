@@ -218,6 +218,27 @@ if(NOT WIN32)
 endif()
 
 # ------------------------------------------------------------------------------
+# dressi_c: C11 graph core (Add/Mul/Float + BuildBackward). No Vulkan.
+# ------------------------------------------------------------------------------
+add_library(dressi_c STATIC
+    src/c/dressi_ad.c
+    src/c/dressi_add.c
+    src/c/dressi_mul.c
+    src/c/function.c
+    src/c/dressi_build_backward.c
+)
+set_target_properties(dressi_c PROPERTIES
+    C_STANDARD 11
+    C_STANDARD_REQUIRED ON
+    C_EXTENSIONS OFF)
+target_include_directories(dressi_c PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/src/c")
+if(NOT WIN32)
+    target_link_libraries(dressi_c PUBLIC m)
+endif()
+add_executable(dressi_c_mul_bwd src/c/test_mul_backward.c)
+target_link_libraries(dressi_c_mul_bwd PRIVATE dressi_c)
+
+# ------------------------------------------------------------------------------
 # dressi: the Dressi-AD library
 # ------------------------------------------------------------------------------
 file(GLOB_RECURSE DRESSI_SOURCES CONFIGURE_DEPENDS src/*.cpp)
