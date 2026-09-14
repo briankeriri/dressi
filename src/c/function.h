@@ -27,4 +27,7 @@ struct Function {
     int has_const;
 };
 
+Variable *dressi_build_fwd(Function *fn, Variable **xs, uint32_t n);
+Variable *dressi_build_bwd(Function *fn, Variable *gy, uint32_t bwd_idx);
+
 #endif /* DRESSI_C_FUNCTION_H */
