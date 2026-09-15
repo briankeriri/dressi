@@ -35,12 +35,14 @@ This is not a mechanical `.cpp` → `.c` rename.
 
 - Doc: https://linear.app/sourmist/document/c-rewrite-feasibility-82dfb8ec14dc
 - Plan: https://linear.app/sourmist/document/how-we-finish-dressi-c0c25a049664
-- Decision (Done): https://linear.app/sourmist/issue/SOU-42/decision-c-core-is-possible
-- Parent work: https://linear.app/sourmist/issue/SOU-33/convert-dressi-claude-c20-engine-to-c
-- C mappings added on SOU-35/36/37/38/39/40/25/24; SOU-35 retitled
-  (callbacks, not vtable)
+- Decision (Done): https://linear.app/sourmist/issue/ENG-42/decision-c-core-is-possible
+- Parent work: https://linear.app/sourmist/issue/ENG-33/convert-working-c-engine-to-c
+- C mappings on ENG-35/36/37/38/39/40/25/24; ENG-35 is callbacks, not vtable
+- Full-tree briefing (every file, 2026-09-15): `log/202609151409_full_tree_briefing.md`
 
 ## Open issues
 
-None for the language question. Implementation starts at SOU-35
-(CPU Add/Mul reverse-mode gate).
+None for the language question. Implementation starts at ENG-35
+(CPU Add/Mul reverse-mode gate). The Sep 14 log does **not** encode
+HostCached / WIDE / alias-unsplit / remat guards — those are in the
+full-tree briefing and `CLAUDE.md`.

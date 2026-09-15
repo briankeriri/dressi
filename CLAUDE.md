@@ -6,6 +6,12 @@ Appendix A (`Variable` / `Function` / `namespace F` / `DressiAD`); when in
 doubt about API shape, that appendix is the reference. Gradient formulas
 follow PyTorch's derivatives when unclear.
 
+C core is **possible and decided** (Linear ENG-42). The engine is still
+C++20 in this tree; the port starts at ENG-35 (CPU Add/Mul reverse-mode)
+when explicitly asked. This file remains the operational spec. C-port
+traps that a sampled reading misses are in
+`log/202609151409_full_tree_briefing.md`.
+
 ## Build & test
 
 ```sh
